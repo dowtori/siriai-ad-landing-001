@@ -3,38 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글로벌 시딩 랜딩페이지 - 헤더</title>
+  <title>글로벌 시딩 - 영상 섹션</title>
   <link rel="stylesheet" href="7d22efe6b92bce00.css">
   <link rel="stylesheet" href="580da22cd78d0ded.css">
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #000; color: #fff; }
-    header { text-align: center; padding: 120px 20px 60px; }
-    header img.logo { width: 120px; margin-bottom: 30px; }
-    header h1 { font-size: 48px; margin-bottom: 20px; font-weight: bold; }
-    header p { font-size: 20px; color: #aaa; margin-bottom: 40px; }
-    .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .cta-buttons a {
-      display: inline-block;
-      padding: 15px 35px;
-      border-radius: 30px;
-      text-decoration: none;
-      background-color: #fff;
-      color: #000;
-      font-weight: bold;
-      border: 2px solid #fff;
-      transition: all 0.3s;
-    }
-    .cta-buttons a:hover { background-color: #000; color: #fff; border-color: #fff; }
+    body { background-color: #000; color: #fff; margin: 0; font-family: Arial, sans-serif; }
+    .video-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 20px; max-width: 1200px; margin: auto; }
+    .video-card video { width: 100%; border-radius: 12px; }
+    .country-info { text-align: center; margin-top: 10px; font-size: 14px; color: #ccc; display: flex; justify-content: center; align-items: center; gap: 6px; }
+    .country-info img { width: 20px; height: 14px; border: 1px solid #555; }
+    .lazy-load { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
+    .lazy-load.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://via.placeholder.com/120x40?text=GLOVV" alt="Glovv Logo" class="logo">
-    <h1>글로벌 시딩, 지금 시작하세요.</h1>
-    <p>내 브랜드를 세계에 소개하는 방법</p>
-    <div class="cta-buttons">
-      <a href="https://litt.ly/siriai_camp" target="_blank">소개서 & 포트폴리오 보기</a>
+  <section class="video-gallery">
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/kr.png" alt="KR">대한민국</div>
     </div>
-  </header>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/us.png" alt="US">미국</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/jp.png" alt="JP">일본</div>
+    </div>
+  </section>
+
+  <section class="video-gallery lazy-load" id="lazyVideos">
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/gb.png" alt="GB">영국</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/au.png" alt="AU">호주</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/fr.png" alt="FR">프랑스</div>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const lazySection = document.getElementById('lazyVideos');
+      const rect = lazySection.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        lazySection.classList.add('visible');
+      }
+    });
+  </script>
 </body>
 </html>
