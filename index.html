@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,7 +24,7 @@
       border: 2px solid #fff;
       transition: all 0.3s;
     }
-    .cta-buttons a:hover { background-color: #FF6F61; color: #fff; border-color: #FF6F61; } /* hover 색상 */
+    .cta-buttons a:hover { background-color: #FF6F61; color: #fff; border-color: #FF6F61; }
     .video-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 30px 20px; max-width: 1200px; margin: auto; }
     .video-card video { width: 100%; border-radius: 12px; }
     .country-info { text-align: center; margin-top: 6px; font-size: 13px; color: #ccc; display: flex; justify-content: center; align-items: center; gap: 5px; }
@@ -43,15 +44,22 @@
     </div>
   </header>
 
-  <!-- 1~2행 고정 -->
   <section class="video-gallery">
-    <!-- 영상 및 국가명 1~2행 동일 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/kr.png"> 대한민국</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/us.png"> 미국</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/jp.png"> 일본</div>
+    </div>
   </section>
 
-  <!-- 3행 lazy load -->
   <section class="video-gallery lazy-load" id="lazyVideos3"></section>
-
-  <!-- 4행 lazy load -->
   <section class="video-gallery lazy-load" id="lazyVideos4"></section>
 
   <script>
@@ -60,16 +68,22 @@
       if (!lockScroll && window.scrollY > 300) {
         lockScroll = true;
         setTimeout(() => {
+          document.getElementById('lazyVideos3').innerHTML = `
+            <div class="video-card">
+              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video>
+              <div class="country-info"><img src="https://flagcdn.com/w40/de.png"> 독일</div>
+            </div>
+            <div class="video-card">
+              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video>
+              <div class="country-info"><img src="https://flagcdn.com/w40/fr.png"> 프랑스</div>
+            </div>
+            <div class="video-card">
+              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video>
+              <div class="country-info"><img src="https://flagcdn.com/w40/it.png"> 이탈리아</div>
+            </div>`;
           document.getElementById('lazyVideos3').classList.add('visible');
           lockScroll = false;
-        }, 500); // 0.5초 후 3행 표시
-      }
-      if (!lockScroll && window.scrollY > 800) {
-        lockScroll = true;
-        setTimeout(() => {
-          document.getElementById('lazyVideos4').classList.add('visible');
-          lockScroll = false;
-        }, 500); // 0.5초 후 4행 표시
+        }, 500);
       }
     });
   </script>
