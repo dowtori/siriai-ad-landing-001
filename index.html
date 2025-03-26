@@ -6,73 +6,27 @@
   <title>풀 리치 글로브 클론 랜딩페이지</title>
   <link rel="stylesheet" href="7d22efe6b92bce00.css">
   <link rel="stylesheet" href="580da22cd78d0ded.css">
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #000; color: #fff; }
-    header { text-align: center; padding: 100px 20px 60px; }
-    header h1 { font-size: 48px; margin-bottom: 20px; font-weight: bold; }
-    header p { font-size: 20px; color: #aaa; margin-bottom: 40px; }
-    .cta-button { display: inline-block; padding: 15px 35px; border-radius: 30px; text-decoration: none; background-color: #fff; color: #000; font-weight: bold; border: 2px solid #fff; transition: all 0.3s; }
-    .cta-button:hover { background-color: #000; color: #fff; border-color: #fff; }
-
-    .hook-copy {
-      max-width: 768px;
-      margin: 60px auto;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      text-align: center;
-    }
-    .hook-item h3 { font-size: 22px; margin-bottom: 5px; }
-    .hook-item h2 { font-size: 40px; margin-bottom: 5px; }
-    .hook-item p { font-size: 16px; color: #aaa; }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-      gap: 10px;
-      margin: 40px auto;
-      max-width: 500px;
-    }
-    .image-grid img { width: 100%; border-radius: 8px; }
-
-    .faq-section {
-      max-width: 600px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-    .faq-item {
-      border-top: 1px solid #444;
-      padding: 20px 0;
-      cursor: pointer;
-    }
-
-    footer { text-align: center; padding: 60px 20px; background-color: #111; color: #777; font-size: 14px; }
-  </style>
 </head>
 <body>
   <header>
     <h1>글로벌 시딩, 지금 시작하세요.</h1>
     <p>내 브랜드를 세계에 소개하는 방법</p>
-    <a href="https://smore.im/form/x4qX3frfQQ" class="cta-button" target="_blank">소개서 & 포트폴리오 보기</a>
+    <a href="https://smore.im/form/x4qX3frfQQ" target="_blank">소개서 & 포트폴리오 보기</a>
   </header>
 
+  <section class="video-gallery">
+    <div><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video><p>SIERO 시에로</p></div>
+    <div><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video><p>VIG 비긴</p></div>
+    <div><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video><p>madpeach 매드피치</p></div>
+    <div><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video><p>VDL 브이디엘</p></div>
+    <div><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video><p>earfit 얼핏</p></div>
+    <div><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video><p>Deponde 디폰데</p></div>
+  </section>
+
   <section class="hook-copy">
-    <div class="hook-item">
-      <h3>비용 건 당</h3>
-      <h2>5만원</h2>
-      <p>지속 가능한 합리적인 가격</p>
-    </div>
-    <div class="hook-item">
-      <h3>시딩 가능한 나라</h3>
-      <h2>20개 국가</h2>
-      <p>무한한 가능성</p>
-    </div>
-    <div class="hook-item">
-      <h3>자유로운 커스텀</h3>
-      <h2>콘텐츠 타입 지정</h2>
-      <p>연령, 성별, 국가도 지정 가능</p>
-    </div>
+    <div><h3>비용 건 당</h3><h2>5만원</h2><p>지속 가능한 합리적인 가격</p></div>
+    <div><h3>시딩 가능한 나라</h3><h2>20개 국가</h2><p>무한한 가능성</p></div>
+    <div><h3>자유로운 커스텀</h3><h2>콘텐츠 타입 지정</h2><p>연령, 성별, 국가도 지정 가능</p></div>
   </section>
 
   <section class="image-grid">
@@ -85,9 +39,9 @@
   </section>
 
   <section class="faq-section">
-    <div class="faq-item">2차 활용의 기간과 비용이 궁금합니다.</div>
-    <div class="faq-item">클린본 요청이 가능한지 궁금합니다.</div>
-    <div class="faq-item">수정 요청이 가능한지 궁금합니다.</div>
+    <div>2차 활용의 기간과 비용이 궁금합니다.</div>
+    <div>클린본 요청이 가능한지 궁금합니다.</div>
+    <div>수정 요청이 가능한지 궁금합니다.</div>
   </section>
 
   <footer>
