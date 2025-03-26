@@ -57,6 +57,18 @@
       <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video>
       <div class="country-info"><img src="https://flagcdn.com/w40/jp.png"> 일본</div>
     </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/de.png"> 독일</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/fr.png"> 프랑스</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="country-info"><img src="https://flagcdn.com/w40/it.png"> 이탈리아</div>
+    </div>
   </section>
 
   <section class="video-gallery lazy-load" id="lazyVideos3"></section>
@@ -65,21 +77,21 @@
   <script>
     let lockScroll = false;
     window.addEventListener('scroll', () => {
-      if (!lockScroll && window.scrollY > 300) {
+      if (!lockScroll && window.scrollY > 600) {
         lockScroll = true;
         setTimeout(() => {
           document.getElementById('lazyVideos3').innerHTML = `
             <div class="video-card">
-              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video>
-              <div class="country-info"><img src="https://flagcdn.com/w40/de.png"> 독일</div>
+              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video>
+              <div class="country-info"><img src="https://flagcdn.com/w40/in.png"> 인도</div>
             </div>
             <div class="video-card">
-              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video>
-              <div class="country-info"><img src="https://flagcdn.com/w40/fr.png"> 프랑스</div>
+              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video>
+              <div class="country-info"><img src="https://flagcdn.com/w40/es.png"> 스페인</div>
             </div>
             <div class="video-card">
-              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video>
-              <div class="country-info"><img src="https://flagcdn.com/w40/it.png"> 이탈리아</div>
+              <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video>
+              <div class="country-info"><img src="https://flagcdn.com/w40/nl.png"> 네덜란드</div>
             </div>`;
           document.getElementById('lazyVideos3').classList.add('visible');
           lockScroll = false;
