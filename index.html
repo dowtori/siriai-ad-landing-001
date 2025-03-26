@@ -25,10 +25,12 @@
       transition: all 0.3s;
     }
     .cta-buttons a:hover { background-color: #FF6F61; color: #fff; border-color: #FF6F61; }
-    .video-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 30px 20px; max-width: 1200px; margin: auto; }
-    .video-card video { width: 100%; border-radius: 12px; }
-    .country-info { text-align: center; margin-top: 6px; font-size: 13px; color: #ccc; display: flex; justify-content: center; align-items: center; gap: 5px; }
-    .country-info img { width: 20px; height: 14px; border: 1px solid #555; }
+    section.hook-copy { max-width: 768px; margin: 60px auto; padding: 0 20px; text-align: center; }
+    section.hook-copy h2 { font-size: 24px; font-weight: bold; line-height: 1.4; margin-bottom: 20px; }
+    section.faq { max-width: 768px; margin: 60px auto; padding: 0 20px; color: #ddd; }
+    section.faq h3 { font-size: 20px; margin-bottom: 10px; }
+    section.faq p { font-size: 16px; margin-bottom: 30px; color: #aaa; }
+    footer { text-align: center; padding: 40px 20px; background-color: #111; color: #777; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -41,17 +43,60 @@
     </div>
   </header>
 
-  <section class="video-gallery">
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/kr.png"> 대한민국</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/us.png"> 미국</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/jp.png"> 일본</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/de.png"> 독일</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/fr.png"> 프랑스</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/it.png"> 이탈리아</div></div>
+  <section class="video-gallery" id="fixedVideos">
+    <!-- 1~2행 영상 카드 삽입 (기존 AWS 경로) -->
   </section>
 
+  <div class="trigger-point" id="trigger-3"></div>
+  <section class="video-gallery lazy-load" id="lazyVideos3"></section>
+
+  <div class="trigger-point" id="trigger-4"></div>
+  <section class="video-gallery lazy-load" id="lazyVideos4"></section>
+
+  <section class="hook-copy">
+    <h2>20개 국가<br>글로벌 시딩 가능</h2>
+    <h2>건당 5만원부터<br>합리적인 가격 제공</h2>
+    <h2>타겟 맞춤 커스텀<br>국가·연령·성별 지정 가능</h2>
+  </section>
+
+  <section class="faq">
+    <h3>Q. 진행 기간은 얼마나 걸리나요?</h3>
+    <p>A. 평균적으로 2주 내 완료되며, 상황에 따라 조율 가능합니다.</p>
+    <h3>Q. 어떤 플랫폼에 시딩이 가능한가요?</h3>
+    <p>A. 인스타그램, 틱톡, 유튜브 등을 포함해 20개국 이상 다양한 채널에서 진행됩니다.</p>
+    <h3>Q. 콘텐츠 수정이나 검토 과정이 있나요?</h3>
+    <p>A. 업로드 전 사전 검토 및 피드백 과정이 포함됩니다.</p>
+  </section>
+
+  <footer>
+    © 2024 SIRIAI | All rights reserved.
+  </footer>
+
   <script>
-    // 트리거 및 레이지로드 스크립트는 상황에 따라 추가 가능 (지금은 1-2행 고정 상태 기준)
+    let threeLoaded = false;
+    const observerOptions = { root: null, rootMargin: "0px 0px -20px 0px", threshold: 0.2 };
+
+    const observer3 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !threeLoaded) {
+          threeLoaded = true;
+          document.getElementById('lazyVideos3').innerHTML = `
+            <!-- 3행 영상 카드 추가 -->
+          `;
+          document.getElementById('lazyVideos3').classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    observer3.observe(document.getElementById('trigger-3'));
+
+    window.addEventListener('scroll', () => {
+      if (threeLoaded && window.scrollY > 500 && !document.getElementById('lazyVideos4').classList.contains('visible')) {
+        document.getElementById('lazyVideos4').innerHTML = `
+          <!-- 4행 영상 카드 추가 -->
+        `;
+        document.getElementById('lazyVideos4').classList.add('visible');
+      }
+    });
   </script>
 </body>
 </html>
