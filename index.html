@@ -15,6 +15,16 @@
     header p { font-size: 18px; color: #aaa; margin-bottom: 30px; }
     .cta-buttons a { display: inline-block; padding: 14px 30px; border-radius: 30px; text-decoration: none; background-color: #fff; color: #000; font-weight: bold; border: 2px solid #fff; transition: all 0.3s; }
     .cta-buttons a:hover { background-color: #FF6F61; color: #fff; border-color: #FF6F61; }
+    .video-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 30px 20px; max-width: 1200px; margin: auto; }
+    .video-card video { width: 100%; border-radius: 12px; }
+    .country-info { text-align: center; margin-top: 6px; font-size: 13px; color: #ccc; display: flex; justify-content: center; align-items: center; gap: 5px; }
+    .country-info img { width: 20px; height: 14px; border: 1px solid #555; }
+    section.hook-copy { max-width: 768px; margin: 60px auto; padding: 0 20px; text-align: center; }
+    section.hook-copy h2 { font-size: 24px; font-weight: bold; line-height: 1.4; margin-bottom: 20px; }
+    section.faq { max-width: 768px; margin: 60px auto; padding: 0 20px; color: #ddd; }
+    section.faq h3 { font-size: 20px; margin-bottom: 10px; }
+    section.faq p { font-size: 16px; margin-bottom: 30px; color: #aaa; }
+    footer { text-align: center; padding: 40px 20px; background-color: #111; color: #777; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -27,16 +37,13 @@
     </div>
   </header>
 
-  <section class="video-gallery">
-    <div class="video-subsection first-batch">
-      <!-- 1,2행 카드 (6개 영상) 여기에 삽입 -->
-    </div>
-    <div class="video-subsection second-batch" id="second-batch">
-      <!-- 3행 레이지로드 삽입 예정 -->
-    </div>
-    <div class="video-subsection third-batch" id="third-batch">
-      <!-- 4행 레이지로드 삽입 예정 -->
-    </div>
+  <section class="video-gallery first-batch">
+    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/kr.png"> 대한민국</div></div>
+    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/us.png"> 미국</div></div>
+    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/jp.png"> 일본</div></div>
+    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/de.png"> 독일</div></div>
+    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/fr.png"> 프랑스</div></div>
+    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/it.png"> 이탈리아</div></div>
   </section>
 
   <section class="hook-copy">
@@ -57,32 +64,5 @@
   <footer>
     © 2024 SIRIAI | All rights reserved.
   </footer>
-
-  <script>
-    let secondBatchLoaded = false;
-    let thirdBatchLoaded = false;
-
-    const observer2 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !secondBatchLoaded) {
-          secondBatchLoaded = true;
-          document.getElementById('second-batch').innerHTML = `<!-- 3행 카드 삽입 -->`;
-        }
-      });
-    }, { threshold: 0.2 });
-
-    observer2.observe(document.querySelector('.first-batch'));
-
-    const observer3 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && secondBatchLoaded && !thirdBatchLoaded) {
-          thirdBatchLoaded = true;
-          document.getElementById('third-batch').innerHTML = `<!-- 4행 카드 삽입 -->`;
-        }
-      });
-    }, { threshold: 0.2 });
-
-    observer3.observe(document.getElementById('second-batch'));
-  </script>
 </body>
 </html>
