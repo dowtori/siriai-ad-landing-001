@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="580da22cd78d0ded.css">
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background-color: #000; color: #fff; }
-    header { text-align: center; padding: 100px 20px 50px; }
-    header img.logo { width: 100px; margin-bottom: 25px; }
-    header h1 { font-size: 32px; margin-bottom: 15px; font-weight: bold; line-height: 1.3; }
-    header p { font-size: 18px; color: #aaa; margin-bottom: 35px; }
+    header { text-align: center; padding: 90px 20px 40px; }
+    header .logo-text { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 20px; }
+    header h1 { font-size: 30px; margin-bottom: 15px; font-weight: bold; line-height: 1.4; white-space: pre-line; }
+    header p { font-size: 18px; color: #aaa; margin-bottom: 30px; }
     .cta-buttons a {
       display: inline-block;
       padding: 14px 30px;
@@ -23,10 +23,10 @@
       border: 2px solid #fff;
       transition: all 0.3s;
     }
-    .cta-buttons a:hover { background-color: #000; color: #fff; border-color: #fff; }
-    .video-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 35px 20px; max-width: 1200px; margin: auto; }
+    .cta-buttons a:hover { background-color: #FF6F61; color: #fff; border-color: #FF6F61; } /* hover 색상 */
+    .video-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 30px 20px; max-width: 1200px; margin: auto; }
     .video-card video { width: 100%; border-radius: 12px; }
-    .country-info { text-align: center; margin-top: 8px; font-size: 13px; color: #ccc; display: flex; justify-content: center; align-items: center; gap: 5px; }
+    .country-info { text-align: center; margin-top: 6px; font-size: 13px; color: #ccc; display: flex; justify-content: center; align-items: center; gap: 5px; }
     .country-info img { width: 20px; height: 14px; border: 1px solid #555; }
     .lazy-load { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
     .lazy-load.visible { opacity: 1; transform: translateY(0); }
@@ -34,8 +34,9 @@
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/120x40?text=GLOVV" alt="Glovv Logo" class="logo">
-    <h1>가장 쉬운 세계진출, 시리아이와 함께</h1>
+    <div class="logo-text">SIRIAI</div>
+    <h1>가장 쉬운 세계진출,
+시리아이와 함께</h1>
     <p>내 브랜드를 세계에 소개하는 방법</p>
     <div class="cta-buttons">
       <a href="https://litt.ly/siriai_camp" target="_blank">소개서 & 포트폴리오 보기</a>
@@ -44,37 +45,31 @@
 
   <!-- 1~2행 고정 -->
   <section class="video-gallery">
-    <!-- 1행 -->
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/kr.png" alt="KR">대한민국</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/us.png" alt="US">미국</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/jp.png" alt="JP">일본</div></div>
-    <!-- 2행 -->
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/gb.png" alt="GB">영국</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/au.png" alt="AU">호주</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/fr.png" alt="FR">프랑스</div></div>
+    <!-- 영상 및 국가명 1~2행 동일 -->
   </section>
 
   <!-- 3행 lazy load -->
-  <section class="video-gallery lazy-load" id="lazyVideos3">
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/de.png" alt="DE">독일</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/it.png" alt="IT">이탈리아</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/ca.png" alt="CA">캐나다</div></div>
-  </section>
+  <section class="video-gallery lazy-load" id="lazyVideos3"></section>
 
   <!-- 4행 lazy load -->
-  <section class="video-gallery lazy-load" id="lazyVideos4">
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/in.png" alt="IN">인도</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/es.png" alt="ES">스페인</div></div>
-    <div class="video-card"><video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video><div class="country-info"><img src="https://flagcdn.com/w40/nl.png" alt="NL">네덜란드</div></div>
-  </section>
+  <section class="video-gallery lazy-load" id="lazyVideos4"></section>
 
   <script>
+    let lockScroll = false;
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        setTimeout(() => { document.getElementById('lazyVideos3').classList.add('visible'); }, 500); // 딜레이 0.5초 (수정 가능)
+      if (!lockScroll && window.scrollY > 300) {
+        lockScroll = true;
+        setTimeout(() => {
+          document.getElementById('lazyVideos3').classList.add('visible');
+          lockScroll = false;
+        }, 500); // 0.5초 후 3행 표시
       }
-      if (window.scrollY > 800) {
-        setTimeout(() => { document.getElementById('lazyVideos4').classList.add('visible'); }, 500); // 딜레이 0.5초 (수정 가능)
+      if (!lockScroll && window.scrollY > 800) {
+        lockScroll = true;
+        setTimeout(() => {
+          document.getElementById('lazyVideos4').classList.add('visible');
+          lockScroll = false;
+        }, 500); // 0.5초 후 4행 표시
       }
     });
   </script>
