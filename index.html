@@ -6,35 +6,52 @@
   <title>글로브 클론 랜딩페이지</title>
   <link rel="stylesheet" href="7d22efe6b92bce00.css">
   <link rel="stylesheet" href="580da22cd78d0ded.css">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #000; color: #fff; }
+    header { text-align: center; padding: 120px 20px 60px; }
+    header h1 { font-size: 48px; margin-bottom: 20px; font-weight: bold; }
+    header p { font-size: 20px; color: #aaa; margin-bottom: 40px; }
+    .cta-button { display: inline-block; padding: 15px 35px; border-radius: 30px; text-decoration: none; background-color: #fff; color: #000; font-weight: bold; border: 2px solid #fff; transition: all 0.3s; }
+    .cta-button:hover { background-color: #000; color: #fff; border-color: #fff; }
+    section.video-gallery { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .video-card { width: 180px; display: flex; flex-direction: column; align-items: center; }
+    .video-card video { width: 100%; border-radius: 15px; cursor: pointer; transition: transform 0.3s; }
+    .video-card video:hover { transform: scale(1.05); }
+    .video-title { margin-top: 10px; font-weight: 500; text-align: center; font-size: 14px; color: #ddd; }
+    footer { text-align: center; padding: 60px 20px; background-color: #111; color: #777; font-size: 14px; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>글로벌 시딩,<br>지금 시작하세요.</h1>
-    <p>내 브랜드를 세계에 소개하는 방법</p>
-    <a href="https://smore.im/form/x4qX3frfQQ" target="_blank">소개서 & 포트폴리오 보기</a>
+    <h1>브랜드 콘텐츠 제작,<br>지금 시작하세요.</h1>
+    <p>최고의 결과물로 당신의 브랜드를 성장시킵니다.</p>
+    <a href="https://smore.im/form/x4qX3frfQQ" class="cta-button" target="_blank">소개서 & 포트폴리오 보기</a>
   </header>
 
   <section class="video-gallery">
-    <div>SIERO 시에로</div>
-    <div>VIG 비긴</div>
-    <div>madpeach 매드피치</div>
-    <div>VDL 브이디엘</div>
-    <div>earfit 얼핏</div>
-    <div>Deponde 디폰데</div>
-  </section>
-
-  <section class="hook-copy">
-    <div class="hook-item">
-      <h3>20개국</h3>
-      <p>전세계 20여개국으로 발송</p>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_01.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="video-title">SIERO 시에로</div>
     </div>
-    <div class="hook-item">
-      <h3>4만원부터</h3>
-      <p>지속 가능한 합리적인 가격</p>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_02.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="video-title">VIG 비긴</div>
     </div>
-    <div class="hook-item">
-      <h3>일을 일답게</h3>
-      <p>보고 체계와 프로세스를 통한 서포트.</p>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_03.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="video-title">madpeach 매드피치</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_05.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="video-title">VDL 브이디엘</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_06.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="video-title">earfit 얼핏</div>
+    </div>
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_04.mp4?v=250312" muted autoplay loop playsinline></video>
+      <div class="video-title">Deponde 디폰데</div>
     </div>
   </section>
 
