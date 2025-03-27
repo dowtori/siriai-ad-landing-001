@@ -69,3 +69,77 @@
     </div>
   </div>
 </section>
+<section id="section-videos-lazy-1" class="hidden px-4 py-6" data-lazy-trigger>
+  <div class="grid grid-cols-1 gap-4">
+    <!-- 영상 1 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_07.mp4?v=250312" muted autoplay loop playsinline class="w-full rounded-lg"></video>
+      <div class="country-info flex justify-center items-center gap-1 text-xs text-gray-300 mt-1">
+        <img src="https://flagcdn.com/w40/ca.png" class="w-5 h-3.5 border border-gray-600" alt="CA" />
+        캐나다
+      </div>
+    </div>
+
+    <!-- 영상 2 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_08.mp4?v=250312" muted autoplay loop playsinline class="w-full rounded-lg"></video>
+      <div class="country-info flex justify-center items-center gap-1 text-xs text-gray-300 mt-1">
+        <img src="https://flagcdn.com/w40/au.png" class="w-5 h-3.5 border border-gray-600" alt="AU" />
+        호주
+      </div>
+    </div>
+
+    <!-- 영상 3 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_09.mp4?v=250312" muted autoplay loop playsinline class="w-full rounded-lg"></video>
+      <div class="country-info flex justify-center items-center gap-1 text-xs text-gray-300 mt-1">
+        <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3.5 border border-gray-600" alt="VN" />
+        베트남
+      </div>
+    </div>
+  </div>
+</section>
+<section id="section-videos-lazy-2" class="hidden px-4 py-6" data-lazy-trigger>
+  <div class="grid grid-cols-1 gap-4">
+    <!-- 영상 4 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_10.mp4?v=250312" muted autoplay loop playsinline class="w-full rounded-lg"></video>
+      <div class="country-info flex justify-center items-center gap-1 text-xs text-gray-300 mt-1">
+        <img src="https://flagcdn.com/w40/in.png" class="w-5 h-3.5 border border-gray-600" alt="IN" />
+        인도
+      </div>
+    </div>
+
+    <!-- 영상 5 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_11.mp4?v=250312" muted autoplay loop playsinline class="w-full rounded-lg"></video>
+      <div class="country-info flex justify-center items-center gap-1 text-xs text-gray-300 mt-1">
+        <img src="https://flagcdn.com/w40/mx.png" class="w-5 h-3.5 border border-gray-600" alt="MX" />
+        멕시코
+      </div>
+    </div>
+
+    <!-- 영상 6 -->
+    <div class="video-card">
+      <video src="https://nmodelin20.s3.ap-northeast-2.amazonaws.com/glovv/videos/home/reels-block/reels_12.mp4?v=250312" muted autoplay loop playsinline class="w-full rounded-lg"></video>
+      <div class="country-info flex justify-center items-center gap-1 text-xs text-gray-300 mt-1">
+        <img src="https://flagcdn.com/w40/gb.png" class="w-5 h-3.5 border border-gray-600" alt="UK" />
+        영국
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('hidden');
+        observer.unobserve(entry.target); // 한번만 실행
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-lazy-trigger]').forEach(section => {
+    observer.observe(section);
+  });
+</script>
